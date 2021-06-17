@@ -5,53 +5,52 @@ const gatti = [
     {
         nome: 'Pallina',
         eta: 0.5,
-        colore: '#bb3b3b',
+        color: '#bb3b3b',
         sesso: 'female'
     },
     {
         nome: 'Pallino',
         eta: 0.7,
-        colore: '#ac3f3f',
+        color: '#ac3f3f',
         sesso: 'male'
     },
     {
         nome: 'Micio',
         eta: 0.3,
-        colore: '#946a1e',
+        color: '#946a1e',
         sesso: 'male'
     },
     {
         nome: 'Micia',
         eta: 0.4,
-        colore: '#bb8e3b',
+        color: '#bb8e3b',
         sesso: 'female'
     },
     {
         nome: 'Luna',
         eta: 0.5,
-        colore: '#ac6718ee',
+        color: '#ac6718ee',
         sesso: 'female'
     },
     {
         nome: 'Chicco',
         eta: 0.9,
-        colore: '#3d2b09',
+        color: '#3d2b09',
         sesso: 'male'
     },
     {
         nome: 'Trilly',
         eta: 0.1,
-        colore: '#2c2009',
+        color: '#2c2009',
         sesso: 'female'
     }
 ];
 
 gatti.forEach((element) => {
-    const {nome, colore} = element;
+    const {nome, color} = element;
     document.getElementById('nomColGatti').innerHTML += (
         `
-        ${nome} è di colore ${colore}; <br>
-    
+        <i class="fas fa-cat" style="color:${color};"></i> ${nome} è di colore ${color} <br>    
         `
     );
 });
@@ -62,3 +61,5 @@ gatti.forEach((element) => {
 
 // Milestone 3 Creare un nuovo array con prima tutti i gattini femmina e poi tutti i gattini maschio, inserendo solamente nome, colore e opacità del fiocco per ogni gatto.
 // Fate la prima Milestone da soli e poi attendete in comunicazioni l'orario del collegamento.
+
+
