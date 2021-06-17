@@ -48,9 +48,10 @@ const gatti = [
 
 gatti.forEach((element) => {
     const {nome, colore} = element;
-    console.log(
+    document.getElementById('nomColGatti').innerHTML += (
         `
-        ${nome} è di colore ${colore}
+        ${nome} è di colore ${colore}; <br>
+    
         `
     );
 });
