@@ -1,6 +1,8 @@
 // Milestone 1 Definire un array di oggetti; ogni oggetto rappresenta un gatto, che è caratterizzato da: nome, età, colore e sesso.
 // Tramite il forEach(), stampare in pagina tutti i gattini, ciascuno con il proprio colore e il proprio nome.
 
+document.getElementById('container').innerHTML += '--Milestone 1--<br>';
+
 const gatti = [
     {nome: 'Pallina', eta: 2.5, color: '#bb3b3b', sesso: 'female'},
     {nome: 'Pallino', eta: 1.7, color: '#ac3f3f', sesso: 'male'},
@@ -13,7 +15,7 @@ const gatti = [
 
 gatti.forEach((element) => {
     const {nome, color} = element;
-    document.getElementById('nomColGatti').innerHTML += (
+    document.getElementById('container').innerHTML += (
         `
         <i class="fas fa-cat" style="color:${color};"></i> ${nome} <br>    
         `
@@ -22,9 +24,11 @@ gatti.forEach((element) => {
 
 // Milestone 2 Dividere i gatti in due contenitori distinti in base al sesso e aggiungere a fianco di ogni gattino un fiocco colorato di rosa, se femmina, o di blu, se maschio. Il colore del fiocco deve essere più tenue se il gatto è più giovane, più scuro se il gatto è più vecchio.
 
+document.getElementById('container').innerHTML += '<br>--Milestone 2--<br>'
+
 //Dare fiocco per colore e genere
-const blue = '#e7120f';
-const pink = '#211cbb';
+const pink = '#e7120f';
+const blue = '#211cbb';
 
 const newCats = gatti.map((element) => {
     const {nome,eta,color,sesso} = element;
@@ -56,15 +60,30 @@ const printCatsRibbon = (array) => {
 //Filtrare gatti per dividere maschi da femmine
 //male
 const maleCats = newCats.filter((element) => element.sesso == 'male');
-printCatsRibbon(maleCats,'nomColGatti2');
+printCatsRibbon(maleCats,'container');
 
 //female
 const femaleCats = newCats.filter((element) => element.sesso == 'female');
-printCatsRibbon(femaleCats,'nomColGatti2');
-
+printCatsRibbon(femaleCats,'container');
 
 
 // Milestone 3 Creare un nuovo array con prima tutti i gattini femmina e poi tutti i gattini maschio, inserendo solamente nome, colore e opacità del fiocco per ogni gatto.
 // Fate la prima Milestone da soli e poi attendete in comunicazioni l'orario del collegamento.
+
+document.getElementById('container').innerHTML += '<br>--Milestone 3--<br>'
+
+let catsFemaleMale = [...femaleCats,...maleCats];
+
+const catsFemaleMaleZip = catsFemaleMale.map((element) => {
+    const {nome, color, ribbon} = element;
+
+    return {
+        nome,
+        color,
+        ribbon
+    }
+});
+
+printCatsRibbon(catsFemaleMaleZip);
 
 
